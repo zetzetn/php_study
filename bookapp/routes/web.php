@@ -24,6 +24,12 @@ Route::post('/book', function(Request $request) {
         'name' => 'required|max:255',
     ]);
 
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);    
+    } 
+
     $book = new Book;
     $book->title = $request->name;
     $book->save();
