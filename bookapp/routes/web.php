@@ -36,3 +36,11 @@ Route::post('/book', function(Request $request) {
 
     return redirect('/');
 });
+
+Route::delete('/book/{book}',function(Book $book){
+    $book->delete();
+
+    return redirect('/');
+});
+
+
