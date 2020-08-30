@@ -44,3 +44,7 @@ Route::delete('/book/{book}',function(Book $book){
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
